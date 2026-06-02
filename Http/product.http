@@ -1,0 +1,38 @@
+###Create Product (Admin Only)
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTIyNjAsImV4cCI6MTc4MDg5NzA2MH0.vUyE5OnjyvUkWj79vRX71TVmqUqaGDK3Q-cVhTRkJ2M
+
+{
+  "name": "Nike Air Max6",
+  "description": "Sepatu Nike terbaik",
+  "price": 1500000,
+  "stock": 10,
+  "slug": "nike-air-max6",
+  "categoryId": "998f013b-4f99-471f-a7a4-85bdbf070b06"
+}
+
+###Update Product (Admin Only)
+PATCH http://localhost:3000/api/products/bca6c692-216b-45c5-8e76-51d1ecd1a474
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTIyNjAsImV4cCI6MTc4MDg5NzA2MH0.vUyE5OnjyvUkWj79vRX71TVmqUqaGDK3Q-cVhTRkJ2M
+
+{
+  "name": "Nike Air Max2",
+  "description": "Sepatu Ancol",
+  "price": 1600000,
+  "stock": 15,
+  "slug": "Ancol",
+  "categoryId": "998f013b-4f99-471f-a7a4-85bdbf070b06"
+}
+
+###Delete Product (Admin Only)
+DELETE http://localhost:3000/api/products/74c84a08-1081-48b9-a41b-68233b7c2e6a
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTIyNjAsImV4cCI6MTc4MDg5NzA2MH0.vUyE5OnjyvUkWj79vRX71TVmqUqaGDK3Q-cVhTRkJ2M
+
+###Get All Products
+GET http://localhost:3000/api/products?page=1&size=10
+
+###Get Product By Id
+GET http://localhost:3000/api/products/4194d44d-2228-446b-a7a0-7124dbe4f44c
+

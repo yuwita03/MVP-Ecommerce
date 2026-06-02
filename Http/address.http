@@ -1,0 +1,46 @@
+###Create Address
+POST http://localhost:3000/api/addresses
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODE5MDIsImV4cCI6MTc4MDk4NjcwMn0.wvmefAmy3GVjlhHjv0OG9uYYUwktaun0L_PmWsmgVBw
+
+
+{
+  "name": "Nekoyuu",
+  "phone": "081234567890",
+  "street": "Jl. Merdeka No.1",
+  "city": "Jakarta",
+  "province": "DKI Jakarta",
+  "postalCode": "10110",
+  "isDefault": true
+}
+
+###Update Address
+PATCH http://localhost:3000/api/addresses/7a3a73db-2988-4c23-90b8-63a9f5ed352d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTc4MDgsImV4cCI6MTc4MDkwMjYwOH0.tt0tpxkVGXlrzgE-0vuBMJpdAXvNwIihwZlRIY0ovyU
+
+{
+  "name": "Nekoyuu",
+  "city": "Bandung",
+  "province": "Jawa Barat"
+}
+
+###Get All Addresses User
+GET http://localhost:3000/api/addresses
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTc4MDgsImV4cCI6MTc4MDkwMjYwOH0.tt0tpxkVGXlrzgE-0vuBMJpdAXvNwIihwZlRIY0ovyU
+
+###Get Address by ID
+GET http://localhost:3000/api/addresses/7a3a73db-2988-4c23-90b8-63a9f5ed352d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTc4MDgsImV4cCI6MTc4MDkwMjYwOH0.tt0tpxkVGXlrzgE-0vuBMJpdAXvNwIihwZlRIY0ovyU
+
+###Delete Address
+DELETE http://localhost:3000/api/addresses/7a3a73db-2988-4c23-90b8-63a9f5ed352d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTc4MDgsImV4cCI6MTc4MDkwMjYwOH0.tt0tpxkVGXlrzgE-0vuBMJpdAXvNwIihwZlRIY0ovyU
+
+### Set Default Address
+PATCH http://localhost:3000/api/addresses/e3dc4908-e5f3-4f6d-a52b-a3a769de958e/default
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMDAwNDUsImV4cCI6MTc4MDkwNDg0NX0.ZRO3t4_mfByqHTfjQP2uIZmv05G_aM8hJRNkd3W60nY

@@ -1,0 +1,26 @@
+1. Register user baru atau login user yang sudah ada
+   POST /api/users/login
+
+2. Login admin (untuk manage product & category)
+   POST /api/users/login (username: admin, password: admin123)
+
+3. Create category (pakai token admin)
+   POST /api/categories
+
+4. Create product (pakai token admin)
+   POST /api/products
+
+5. Login sebagai user biasa
+   POST /api/users/login
+
+6. Create address (pakai token user)
+   POST /api/addresses
+
+7. Add product ke cart (pakai token user)
+   POST /api/cart
+
+8. Get cart untuk lihat items dan id nya
+   GET /api/cart
+
+9. Checkout (pakai token user + addressId)
+   POST /api/orders

@@ -1,0 +1,48 @@
+###Checkout
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODE4MjYsImV4cCI6MTc4MDk4NjYyNn0.XR9H66jxhEKBMuNDgcIhC9yQoWX4MH7s1PLA4HCfkrY
+ 
+
+{
+  "addressId": "3f560a2a-986b-49cd-a009-4f461d94ed18"
+}
+
+###1. Login User
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "username": "nekoyuu",
+  "password": "password123"
+}
+
+###2. Add to Cart
+POST http://localhost:3000/api/cart
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODk2ODUsImV4cCI6MTc4MDk5NDQ4NX0.fiJEbu3AAPyyzmCgxbn5Jh8iMPnxhkF_-CC8NTaq9PA
+
+{
+  "productId": "26bd12d2-a106-4196-9131-431412fe6d38",
+  "quantity": 1
+}
+
+###Get My Addresses
+GET http://localhost:3000/api/addresses
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODE5MDIsImV4cCI6MTc4MDk4NjcwMn0.wvmefAmy3GVjlhHjv0OG9uYYUwktaun0L_PmWsmgVBw
+
+
+###3. Checkout
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODE5MDIsImV4cCI6MTc4MDk4NjcwMn0.wvmefAmy3GVjlhHjv0OG9uYYUwktaun0L_PmWsmgVBw
+
+
+
+{
+  "addressId": "f3c12e9d-a549-428d-a1c9-9e0dc5f3bb32"
+}
+
+###4. Create Payment
+POST http://localhost:3000/api/payment/9cfe44bf-4707-4b79-ba74-a01a8dc4119c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODE5MDIsImV4cCI6MTc4MDk4NjcwMn0.wvmefAmy3GVjlhHjv0OG9uYYUwktaun0L_PmWsmgVBw

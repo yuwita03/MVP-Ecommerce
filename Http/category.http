@@ -1,0 +1,30 @@
+###Create Category (Admin Only)
+POST http://localhost:3000/api/categories
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyNTgxMTksImV4cCI6MTc4MDg2MjkxOX0.mOPjtxCGBKalT61wxkZFzlp1AqoYPJnEiDaNSbL-qwU
+
+{
+  "name": "Sepatu2",
+  "slug": "sepatu2"
+}
+
+###Update Category (Admin Only)
+PATCH http://localhost:3000/api/categories/adcadc5b-5631-4298-bd60-2828e3411047
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyNTgxMTksImV4cCI6MTc4MDg2MjkxOX0.mOPjtxCGBKalT61wxkZFzlp1AqoYPJnEiDaNSbL-qwU
+
+{
+  "name": "Sepatu Updated2",
+  "slug": "sepatu-updated"
+}
+
+###Get All Categories
+GET http://localhost:3000/api/categories?page=1&size=10
+Content-Type: application/json
+
+###Get Category by ID
+GET http://localhost:3000/api/categories/519024b3-a7e3-4290-a0ac-111bc64ee2bf
+
+###Delete Category (Admin Only)
+DELETE http://localhost:3000/api/categories/519024b3-a7e3-4290-a0ac-111bc64ee2bf
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyODk1MjMsImV4cCI6MTc4MDg5NDMyM30.KGa4hGHS--vNxOXzGVxCb1n8V1DXIYrMGiGsu6NMbzU

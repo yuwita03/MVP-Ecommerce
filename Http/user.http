@@ -1,0 +1,54 @@
+# User Registration
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Nekoyuu",
+  "username": "nekoyuu",
+  "email": "nekoyuu@example.com",
+  "password": "password123"
+
+}
+
+###Login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "nekoyuu",
+  "password": "password123"
+}
+
+###Logout
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODk2MzYsImV4cCI6MTc4MDk5NDQzNn0.llWWNj86QvGV1RlezsFdE2rURFVndzR6Vupcm7rMrOY
+
+###Update User
+PATCH http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMTQwMDAsImV4cCI6MTc4MDkxODgwMH0.DxZCpNiX9Gkt1SMH3UsYExeYOIjDfMjFmxaZ7I8Fawk
+
+{
+  "name": "admin",
+  "email": "admin@example.com"
+}
+
+# ===== ADMIN =====
+
+###Get All Users
+GET http://localhost:3000/api/users/admin/users?page=1&size=10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyNTU4NDMsImV4cCI6MTc4MDg2MDY0M30.NpZiE64OArHS_Q2hp5qA9w7Kx5gRcHNoJc98DI2H_Fs
+
+###Update User by Admin
+PATCH http://localhost:3000/api/users/admin/fe142ad8-976f-4107-b30d-7e557de73361
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyNTU4NDMsImV4cCI6MTc4MDg2MDY0M30.NpZiE64OArHS_Q2hp5qA9w7Kx5gRcHNoJc98DI2H_Fs
+
+{
+  "name": "Nekoyuu",
+  "role": "ADMIN"
+}

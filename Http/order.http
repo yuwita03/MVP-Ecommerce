@@ -1,0 +1,27 @@
+GET http://localhost:3000/api/orders
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMjIwNzAsImV4cCI6MTc4MDkyNjg3MH0.dsM_reEQXeVI0NWZd1fqPuG7-28752DkHZZqZGPvoXs
+
+### GetById
+GET http://localhost:3000/api/orders/b798c414-2947-4397-a623-39acc588c778
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMjgyMTgsImV4cCI6MTc4MDkzMzAxOH0.HZsedaxdRBkMc0smMqiTHNHcI4gMuvSgdCDS5FX3guI
+// data id
+
+### GetAll Admin
+GET http://localhost:3000/api/orders/admin?page=1&size=10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzNzAyNjQsImV4cCI6MTc4MDk3NTA2NH0.Q2avS0zLsspvW2oXAQ9Ueg5Myt-_kcT-r0SRb8qzb6A
+
+###Delete Order
+DELETE http://localhost:3000/api/orders/a5afe8bd-150e-46aa-873d-20ea0549f646/cancel
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMjgyMTgsImV4cCI6MTc4MDkzMzAxOH0.HZsedaxdRBkMc0smMqiTHNHcI4gMuvSgdCDS5FX3guI
+// data id
+
+
+### Update Status
+PATCH http://localhost:3000/api/orders/admin/b798c414-2947-4397-a623-39acc588c778/status
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzNzIzNDksImV4cCI6MTc4MDk3NzE0OX0.5hGR0FpBCcQJEbb552Jy5mvqgJiBQDXcFCzWxKrfGmY
+
+{
+    "status": "PAID"
+}
+
