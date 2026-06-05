@@ -14,7 +14,7 @@ app.enableCors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 });
-
+console.log('🔥 CORS BOOTSTRAPPED');
   //Setup Swagger
   const config = new DocumentBuilder()
     .setTitle('SaaS E-Commerce API')
