@@ -1,5 +1,5 @@
 # User Registration
-POST http://localhost:3000/api/users
+POST https://your-app.up.railway.app/api/users
 Content-Type: application/json
 Accept: application/json
 
