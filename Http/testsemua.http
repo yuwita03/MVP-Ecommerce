@@ -19,8 +19,8 @@ POST https://bubbly-connection-production-1305.up.railway.app/api/users
 Content-Type: application/json
 
 {
-  "name": "Test User",
-  "username": "testuser",
-  "email": "test@example.com",
+  "name": "Test User2",
+  "username": "testuser2",
+  "email": "test2@example.com",
   "password": "password123"
 }

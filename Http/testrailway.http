@@ -1,0 +1,132 @@
+###Register
+POST https://bubbly-connection-production-1305.up.railway.app/api/users
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###Login
+POST https://bubbly-connection-production-1305.up.railway.app/api/users/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "password123"
+}
+
+###Login Admin
+POST https://bubbly-connection-production-1305.up.railway.app/api/users/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###Get Profile
+GET https://bubbly-connection-production-1305.up.railway.app/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODdhNTI2Mi0wYzIxLTQ4NDQtYThiMC05ZjFlMmRlNWVkYWUiLCJpYXQiOjE3ODA0OTMyMTksImV4cCI6MTc4MTA5ODAxOX0.f6-6Ikzf1RNdv_iY7hLUApt2GGLeDyS46eGNwMO2-HY
+
+###Logout
+DELETE https://bubbly-connection-production-1305.up.railway.app/api/users/logout
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODdhNTI2Mi0wYzIxLTQ4NDQtYThiMC05ZjFlMmRlNWVkYWUiLCJpYXQiOjE3ODA0OTMyMTksImV4cCI6MTc4MTA5ODAxOX0.f6-6Ikzf1RNdv_iY7hLUApt2GGLeDyS46eGNwMO2-HY
+
+###Get All Categories
+GET https://bubbly-connection-production-1305.up.railway.app/api/categories
+
+###Create Category (Admin)
+POST https://bubbly-connection-production-1305.up.railway.app/api/categories
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODdhNTI2Mi0wYzIxLTQ4NDQtYThiMC05ZjFlMmRlNWVkYWUiLCJpYXQiOjE3ODA0OTMyMTksImV4cCI6MTc4MTA5ODAxOX0.f6-6Ikzf1RNdv_iY7hLUApt2GGLeDyS46eGNwMO2-HY
+
+{
+  "name": "Sepatu",
+  "slug": "sepatu"
+}
+
+###Get All Products
+GET https://bubbly-connection-production-1305.up.railway.app/api/products
+
+###Create Product (Admin)
+POST https://bubbly-connection-production-1305.up.railway.app/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhODdhNTI2Mi0wYzIxLTQ4NDQtYThiMC05ZjFlMmRlNWVkYWUiLCJpYXQiOjE3ODA0OTMyMTksImV4cCI6MTc4MTA5ODAxOX0.f6-6Ikzf1RNdv_iY7hLUApt2GGLeDyS46eGNwMO2-HY
+
+{
+  "name": "Nike Air Max",
+  "description": "Sepatu Nike terbaik",
+  "price": 1500000,
+  "stock": 50,
+  "slug": "nike-air-max",
+  "categoryId": "id-category-nya"
+}
+
+###Search Product
+GET https://bubbly-connection-production-1305.up.railway.app/api/products/search?search=nike
+
+###Create Address
+POST https://bubbly-connection-production-1305.up.railway.app/api/addresses
+Content-Type: application/json
+Authorization: token-user...
+
+{
+  "name": "Test User",
+  "phone": "081234567890",
+  "street": "Jl. Merdeka No.1",
+  "city": "Jakarta",
+  "province": "DKI Jakarta",
+  "postalCode": "10110",
+  "isDefault": true
+}
+
+###Get All Addresses
+GET https://bubbly-connection-production-1305.up.railway.app/api/addresses
+Authorization: token-user...
+
+###Add To Cart
+POST https://bubbly-connection-production-1305.up.railway.app/api/cart
+Content-Type: application/json
+Authorization: token-user...
+
+{
+  "productId": "id-product-nya",
+  "quantity": 2
+}
+
+###Get Cart
+GET https://bubbly-connection-production-1305.up.railway.app/api/cart
+Authorization: token-user...
+
+###Checkout
+POST https://bubbly-connection-production-1305.up.railway.app/api/orders
+Content-Type: application/json
+Authorization: token-user...
+
+{
+  "addressId": "id-address-nya"
+}
+
+###Get My Orders
+GET https://bubbly-connection-production-1305.up.railway.app/api/orders
+Authorization: token-user...
+
+###Create Payment
+POST https://bubbly-connection-production-1305.up.railway.app/api/payments/id-order-nya
+Authorization: token-user...
+
+###Get All Orders (Admin)
+GET https://bubbly-connection-production-1305.up.railway.app/api/orders/admin?page=1&size=10
+Authorization: token-admin...
+
+###Update Order Status (Admin)
+PATCH https://bubbly-connection-production-1305.up.railway.app/api/orders/admin/id-order-nya/status
+Content-Type: application/json
+Authorization: token-admin...
+
+{
+  "status": "PAID"
+}

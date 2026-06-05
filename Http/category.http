@@ -23,7 +23,7 @@ GET http://localhost:3000/api/categories?page=1&size=10
 Content-Type: application/json
 
 ###Get Category by ID
-GET http://localhost:3000/api/categories/519024b3-a7e3-4290-a0ac-111bc64ee2bf
+GET http://localhost:3000/api/categories/0946aef0-35eb-490e-a063-2480a07167e7
 
 ###Delete Category (Admin Only)
 DELETE http://localhost:3000/api/categories/519024b3-a7e3-4290-a0ac-111bc64ee2bf

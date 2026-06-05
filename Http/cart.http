@@ -30,3 +30,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEz
 DELETE http://localhost:3000/api/cart
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAzMDUwNDYsImV4cCI6MTc4MDkwOTg0Nn0.eSDQJ6HnVAZxdekIEx7uNVu71ah-PnIMcrWmTW3WlSY
+
+###Get Cart
+GET http://localhost:3000/api/cart
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZWI5NDNhZC1iYzc3LTQyNWQtYWMwOS0xZDNkZThiYzc0NmMiLCJpYXQiOjE3ODA2MTgzMjAsImV4cCI6MTc4MTIyMzEyMH0.c4RHf0aFtUkD9LzMwPtU0BYrJVFkAQXJFotkmGPjwjU

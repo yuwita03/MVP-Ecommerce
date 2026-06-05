@@ -17,14 +17,14 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "username": "nekoyuu",
-  "password": "password123"
+  "username": "admin",
+  "password": "admin123"
 }
 
 ###Logout
 DELETE http://localhost:3000/api/users/logout
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmZTE0MmFkOC05NzZmLTQxMDctYjMwZC03ZTU1N2RlNzMzNjEiLCJpYXQiOjE3ODAzODk2MzYsImV4cCI6MTc4MDk5NDQzNn0.llWWNj86QvGV1RlezsFdE2rURFVndzR6Vupcm7rMrOY
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhNjhiZWIwNS00OTYwLTQzZTctYjAyNS0yMTZkZTg1OGZiMTciLCJpYXQiOjE3ODA1OTA0MjMsImV4cCI6MTc4MTE5NTIyM30.SQG6nlD0bj6z7tbxPBlA-VRyfKWZ5c6cOGo3gzpBmoE
 
 ###Update User
 PATCH http://localhost:3000/api/users

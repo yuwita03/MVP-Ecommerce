@@ -1,7 +1,7 @@
 ###Create Product (Admin Only)
 POST http://localhost:3000/api/products
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1M2QwZjQ1ZS1mNzEzLTRiNTYtODI2ZS1iNDU1MDExYmFmZDgiLCJpYXQiOjE3ODAyOTIyNjAsImV4cCI6MTc4MDg5NzA2MH0.vUyE5OnjyvUkWj79vRX71TVmqUqaGDK3Q-cVhTRkJ2M
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGEyNmVlMC01NzEwLTQ1NTItOWViOS0zMjZiOGUxY2I4ZmIiLCJpYXQiOjE3ODA1MzgwNDUsImV4cCI6MTc4MTE0Mjg0NX0.plpbFiQYbNlk03nyjL-HVNlt6ggCJ37nJTXGEl70WTc
 
 {
   "name": "Nike Air Max6",

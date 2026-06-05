@@ -6,6 +6,15 @@ import { DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+
+  // Izinkan request dari FE localhost
+  app.enableCors({
+    origin: ['http://localhost:5173',],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'authorization'],
+  });
+
+
   //Setup Swagger
   const config = new DocumentBuilder()
     .setTitle('SaaS E-Commerce API')
