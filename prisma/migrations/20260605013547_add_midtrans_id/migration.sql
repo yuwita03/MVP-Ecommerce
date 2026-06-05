@@ -5,7 +5,7 @@
 
 */
 -- AlterTable
-ALTER TABLE `order` ADD COLUMN `midtransId` VARCHAR(191) NULL;
+ALTER TABLE `Order` ADD COLUMN `midtransId` VARCHAR(191) NULL;
 
 -- CreateIndex
 CREATE UNIQUE INDEX `Order_midtransId_key` ON `Order`(`midtransId`);
