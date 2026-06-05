@@ -6,7 +6,6 @@ import { DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-app.setGlobalPrefix('api')
   // Izinkan request dari FE localhost
 app.enableCors({
   origin: '*',
