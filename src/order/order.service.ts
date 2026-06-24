@@ -23,6 +23,15 @@ export class OrderService {
       status: order.status,
       totalPrice: Number(order.totalPrice),
       addressId: order.addressId,
+      address: order.address ? {         // ← tambahin ini
+      id: order.address.id,
+      name: order.address.name,
+      phone: order.address.phone,
+      street: order.address.street,
+      city: order.address.city,
+      province: order.address.province,
+      postalCode: order.address.postalCode,
+    } : undefined,
       user: {
         id: order.user.id,
         username: order.user.username,
