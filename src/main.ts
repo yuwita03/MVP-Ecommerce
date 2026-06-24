@@ -8,7 +8,10 @@ async function bootstrap() {
 
   // Izinkan request dari FE localhost
 app.enableCors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    process.env.FRONTEND_URL,
+  ],
   credentials: true,
 });
 app.setGlobalPrefix('api');
