@@ -22,46 +22,62 @@ export class PaymentService {
             clientKey: process.env.MIDTRANS_CLIENT_KEY!,    // key untuk frontend
         })
     }
-    async createPayment(orderId: string): Promise<{ token: string; redirectUrl: string}>{
-        this.logger.debug(`Creating payment for order: ${orderId}`)
+async createPayment(orderId: string): Promise<{ token: string; redirectUrl: string}>{
+    this.logger.debug(`Creating payment for order: ${orderId}`)
 
-        const order = await this.prismaService.order.findUnique({
-            where: { id: orderId },
-            include: {
-                user: true,
-                items: { include: {product: true }}
+    const order = await this.prismaService.order.findUnique({
+        where: { id: orderId },
+        include: {
+            user: true,
+            items: { include: {product: true }}
+        }
+    });
+
+    if(!order) throw new HttpException('Order not Found', 404);
+    if (order.status !== 'PENDING') throw new HttpException('Order is not pending', 404);
+
+    // Kalau token masih valid, return langsung tanpa bikin transaksi baru
+    if (order.snapToken && order.snapUrl && order.snapTokenExpiredAt) {
+        if (order.snapTokenExpiredAt > new Date()) {
+            return {
+                token: order.snapToken,
+                redirectUrl: order.snapUrl,
             }
-        });
-
-        if(!order) throw new HttpException('Order not Found', 404);
-        // Hanya order PENDING yang bisa dibayar
-        if (order.status !== 'PENDING') throw new HttpException('Order is not pending', 404);
-
-        // Kirim data transaksi ke midtrans
-        // Midtrans akan return token dan URL halam pembayaran
-        // Note harus di tambahkan decorator library nya di types/midtrans-client.d.ts
-        const transaction = await this.snap.createTransaction({
-            transaction_details:{
-                order_id: order.id,       // Id unik transaksinya
-                gross_amount: Number(order.totalPrice) // total harga bayar nya
-            },
-            customer_details:{
-                first_name: order.user.name,
-                email: order.user.email,
-            },
-            item_details: order.items.map(items => ({
-                id: items.productId,
-                name: items.product.name,
-                price: Number(items.price), // Harga per item
-                quantity: items.quantity
-            })),
-        });
-
-        return {
-            token: transaction.token,   // token untuk Midtrans.js di frontend
-            redirectUrl: transaction.redirect_url   // URL halaman pembayaran Midtrans
         }
     }
+
+    const transaction = await this.snap.createTransaction({
+        transaction_details:{
+            order_id: order.id,
+            gross_amount: Number(order.totalPrice)
+        },
+        customer_details:{
+            first_name: order.user.name,
+            email: order.user.email,
+        },
+        item_details: order.items.map(items => ({
+            id: items.productId,
+            name: items.product.name,
+            price: Number(items.price),
+            quantity: items.quantity
+        })),
+    });
+
+    // Simpan token ke DB
+    await this.prismaService.order.update({
+        where: { id: orderId },
+        data: {
+            snapToken: transaction.token,
+            snapUrl: transaction.redirect_url,
+            snapTokenExpiredAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
+        }
+    })
+
+    return {
+        token: transaction.token,
+        redirectUrl: transaction.redirect_url
+    }
+}
 
     async handleWebHook(notifictaion: any): Promise<boolean>{
         this.logger.debug(`Handling webhook: ${JSON.stringify(notifictaion)}`)

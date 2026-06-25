@@ -107,6 +107,8 @@ model Order {
   addressId   String
   status      OrderStatus @default(PENDING)
   totalPrice   Decimal      @db.Decimal(10, 2)
+  snapToken          String?
+  snapUrl            String?
 
   user        User         @relation(fields: [userId], references: [id])
   address     Address      @relation(fields: [addressId], references: [id])
@@ -114,6 +116,7 @@ model Order {
 
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
+  snapTokenExpiredAt DateTime?
 }
 
 model OrderItem{
