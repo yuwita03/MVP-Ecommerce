@@ -11,8 +11,10 @@ export class AuthMiddleware implements NestMiddleware {
   ) {}
 
   async use(req: any, res: any, next: () => void) {
-    // Ambil token dari header Authorization
-    const token = req.headers['authorization'] as string;
+  const authHeader = req.headers['authorization'] as string;
+  const token = authHeader?.startsWith('Bearer ') 
+    ? authHeader.slice(7) 
+    : authHeader;
 
     if (token) {
       try {
